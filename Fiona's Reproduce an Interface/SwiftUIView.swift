@@ -21,24 +21,23 @@ struct SwiftUIView: View {
     let textColor: Color
     
     var body: some View {
-        VStack {
-            Spacer()
             HStack {
                 VStack {
+                    Spacer()
                     HStack {
                         Text(title1)
-                            .font(.title2)
+                            .font(.headline)
                         Spacer()
                     }
                     HStack {
                         Text(title2)
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
                     }
                     HStack {
                         Text(subTitle)
-                            .font(.body)
+                            .font(.callout)
                         Spacer()
                     }
                     HStack {
@@ -46,6 +45,7 @@ struct SwiftUIView: View {
                             .font(.footnote)
                         Spacer()
                     }
+                    Spacer()
                 }
                 VStack {
                     HStack {
@@ -53,16 +53,16 @@ struct SwiftUIView: View {
                         ZStack {
                             Rectangle()
                                 .foregroundColor(rectangleColor)
+                                .cornerRadius(4.0)
                                 .frame(width: 70, height: 20)
-                                .padding()
                             Text(time)
-                                .font(.body)
+                                .font(.system(size: 14))
+                                .fontWeight(.bold)
                                 .foregroundColor(textColor)
                         }
                     }
                     Spacer()
                     HStack {
-                        Spacer()
                         Spacer()
                         ZStack {
                             Circle()
@@ -76,13 +76,11 @@ struct SwiftUIView: View {
                                     .frame(width: 8, height: 8)
                                     .scaledToFit()
                         }
-                        Spacer()
                     }
                 }
-
+                .frame(width: 55)
             }
-            Spacer()
-        }
+            .frame(height: 100)
     }
 }
 
