@@ -21,66 +21,64 @@ struct SwiftUIView: View {
     let textColor: Color
     
     var body: some View {
-            HStack {
-                VStack {
-                    Spacer()
-                    HStack {
-                        Text(title1)
-                            .font(.headline)
-                        Spacer()
-                    }
-                    HStack {
-                        Text(title2)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    HStack {
-                        Text(subTitle)
-                            .font(.callout)
-                        Spacer()
-                    }
-                    HStack {
-                        Text(content)
-                            .font(.footnote)
-                        Spacer()
-                    }
+        HStack {
+            VStack {
+                HStack {
+                    Text(title1)
+                        .font(.headline)
                     Spacer()
                 }
-                VStack {
-                    HStack {
-                        Spacer()
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(rectangleColor)
-                                .cornerRadius(4.0)
-                                .frame(width: 70, height: 20)
-                            Text(time)
-                                .font(.system(size: 14))
-                                .fontWeight(.bold)
-                                .foregroundColor(textColor)
-                        }
-                    }
+                HStack {
+                    Text(title2)
+                        .font(.title3)
+                        .fontWeight(.bold)
                     Spacer()
-                    HStack {
-                        Spacer()
-                        ZStack {
-                            Circle()
-                                .foregroundColor(circleColor1)
-                                .frame(width: 25)
-                            Circle()
-                                    .foregroundColor(circleColor2)
-                                    .frame(width: 23)
-                            Rectangle()
-                                    .foregroundColor(rectangleColor1)
-                                    .frame(width: 8, height: 8)
-                                    .scaledToFit()
-                        }
-                    }
                 }
-                .frame(width: 55)
+                HStack {
+                    Text(subTitle)
+                        .font(.callout)
+                    Spacer()
+                }
+                HStack {
+                    Text(content)
+                        .font(.caption)
+                    Spacer()
+                }
             }
-            .frame(height: 100)
+            VStack {
+                HStack {
+                    Spacer()
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(rectangleColor)
+                            .cornerRadius(4.0)
+                            .frame(width: 65, height: 18)
+                        Text(time)
+                            .font(.system(size: 12))
+                            .fontWeight(.bold)
+                            .foregroundColor(textColor)
+                    }
+                }
+                Spacer()
+                HStack {
+                    Spacer()
+                    ZStack {
+                        Circle()
+                            .foregroundColor(circleColor1)
+                            .frame(width: 25)
+                        Circle()
+                            .foregroundColor(circleColor2)
+                            .frame(width: 23)
+                        Rectangle()
+                            .foregroundColor(rectangleColor1)
+                            .frame(width: 8, height: 8)
+                            .scaledToFit()
+                    }
+                }
+            }
+            .frame(width: 65)
+        }
+        .frame(height: 100)
     }
 }
 
